@@ -1,0 +1,21 @@
+{% extends 'paginas/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h3> Registrar </h3>
+        <hr>
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-primary"> Registrar </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

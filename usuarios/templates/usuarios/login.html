@@ -1,0 +1,47 @@
+{% extends 'paginas/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block titulo %} <title>Login</title> {% endblock %}
+
+{% block conteudo %}
+                <div class="row border-radius bg-cinza-escuro col-md-6 mx-auto">
+                <div class="col-md-7.5 mx-auto mt-3">
+                    <img src="{% static 'img/favicon.svg'%}" alt="logo super survey" width="237" height="235">
+                </div>    
+                {% if request.user.is_authenticated %}
+                <h3> Ação não permitida </h3>
+
+                <p class="lead">
+                    <strong>
+                        Houve algum problema para processar a ação desejada ou você não tem permissão para isso.
+                    </strong>
+                </p>
+            </div>
+    </div>
+</div>
+    {% else %}
+
+    <div class="col-md-10 mx-auto">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form|crispy }}
+            <div class="col-md-6 mx-auto">
+        <button type="submit" class="btn btn-danger btn-lg btn-block"> Entrar </button>
+       <a href="{% url 'registrar' %}" class="btn btn-secondary btn-lg btn-block mt-2 mb-2"> Cadastrar-se </a>
+            <strong class="text-white">Esqueci minha senha</strong> 
+            </div>
+             
+        </form>
+        
+    </div>
+    </div>
+    
+    
+    {% endif %}
+
+{% endblock %}

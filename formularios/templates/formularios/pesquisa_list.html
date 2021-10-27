@@ -1,0 +1,47 @@
+{% extends 'paginas/base.html' %}
+{% load static %}
+{% block title %} Lista de Formulários {% endblock %}
+{% block conteudo %}
+<div class="content.flex sm mx-auto mt-0 mb-3 pd-2">
+    <h3> Lista de Formulários</h3>
+</div>
+<div class="input-group mt-5 mb-3">
+
+    <form method="GET"  id="search-form">
+        <div class="input-group-append">
+            <input type="text" class="form-control" name="busca" placeholder="Digite o título da pesquisa" aria-label="Pesquisa"
+                aria-describedby="basic-addon1" value="{{request.GET.busca}}">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search" id="search-btn"></i></span>
+        </div>
+    </form>
+
+</div>
+
+
+
+
+
+{% for item in lista_pesq %}
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="d-inline">Título : <a style="text-decoration: none;" href="{% url 'resultado' item.id %}">{{item.titulo}}</a></h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Perguntas: {{item.countQuest}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock conteudo %}
+
+{% block scripts %}
+<script src="{% static 'js/pesquisa_list.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'paginas/base.html' %}
+{% load static %}
+
+{% block conteudo %}
+
+<div class="container px-5">
+
+    <div class="row justify-content-end">
+        <div class="d-flex col-4">
+            <div class="lead">
+                Aceitando respostas?
+            </div>
+        
+            <select class="custom-select ml-auto" style="max-width: 100px;" id="select-aceitando">
+                <option value="1" selected>Sim</option>
+                <option value="0">Não</option>
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-end mt-1">
+        <div class="d-flex col-4">
+            <div class="lead">
+                Período:
+            </div>
+            
+            <input class="form-control ml-auto mr-1" type="number" style="max-width: 100px;" id="input-periodo">
+
+            <select class="custom-select" style="max-width: 100px;" id="select-periodo">
+                <option value="dia" selected>Dias</option>
+                <option value="mes">Mês</option>
+                <option value="ano">Ano</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+        <div class="card">
+            
+            <div class="card-header">
+                <form class="form-inline non-submit">
+                <h5 class="d-inline">Título:</h5>
+                <input class="form-control w-100 d-inline" type="text" style="display: inline !important;" placeholder="Digite o título do formulário" id="input-titulo">
+                </form>
+            </div>
+      
+            <div class="card-body">
+              <h5 class="card-title">Descrição:</h5>
+                <textarea class="form-control" rows="3" placeholder="Digite o título do formulário" id="text-descricao"></textarea>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="perguntas">
+
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-dark rounded-circle" id="btn-adicionar-perguntas">    
+            <i class="fas fa-plus fa-2x"></i>
+        </button>
+    </div>
+    <div class="text-center mt-4">
+        <button class="btn bg-survey text-light" id="btn-enviar-formulario">
+            <div class="align-content-center d-flex">
+                <span class="lead">Criar Formulário</span>    
+                <i class="fas fa-save fa-2x ml-2"></i>
+            </div>
+        </button>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/formulario_criacao.js' %}"></script>
+{% endblock %}
+
+
+
+
+<!-- EXEMPLO RADIO -->
+<!-- <div class="row mt-4">
+    <div class="col-1 d-flex">
+        <input class="form-check-input ml-1 align-self-center" type="radio" disabled>
+    </div>
+    <div class="col-11 d-flex">
+        <input class="form-control ml-auto mr-1 w-100  align-self-center" type="text">
+    </div>
+</div> -->
+
+<!-- EXEMPLO CHECKBOX -->
+<!-- <div class="row mt-4">
+    <div class="col-1 d-flex">
+        <input class="form-check-input ml-1 align-self-center" type="checkbox" disabled>
+    </div>
+    <div class="col-11 d-flex">
+        <input class="form-control ml-auto mr-1 w-100  align-self-center" type="text">
+    </div>
+</div> -->
+
+<!-- EXEMPLO INPUT -->
+<!-- <div class="row mt-4">
+    <div class="col-12 d-flex">
+        <input class="form-control ml-auto mr-1 w-100  align-self-center disabled" type="text" disabled>
+    </div>
+</div> -->
+
+<!-- EXEMPLO INPUT -->
+<!-- <div class="row mt-4">
+    <div class="col-12 d-flex">
+        <textarea class="form-control disabled"  rows="3" disabled></textarea>
+    </div>
+</div> -->
+
+

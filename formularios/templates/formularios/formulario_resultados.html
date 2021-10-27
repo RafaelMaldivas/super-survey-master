@@ -1,0 +1,44 @@
+{% extends 'paginas/base.html' %}
+{% load static %}
+
+{% block conteudo %}
+    <div class="container">
+    <h1 class="display-4 text-center">{{ pesquisa.titulo }}</h1>
+    {% for questao in questoes %}
+        {% if questao.grafico %}
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        
+                        <div class="card-header">
+                            <h5 class="text-center">{{ questao.enunciado }}</h5>
+                        </div>
+                
+                        <div class="card-body">
+                            <canvas id="line-chart" class="grafico" data-id="{{ questao.id }}" ></canvas>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div id="questao-texto">
+
+    </div>
+    </div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'js/formulario_resultados.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<script>
+    dadosGraficos = JSON.parse('{{ questoes_json | escapejs }}');
+</script>
+{% endblock %}
+
+
+
+
+

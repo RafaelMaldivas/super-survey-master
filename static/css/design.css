@@ -1,0 +1,112 @@
+/*
+Cores Super-Survey
+*/
+:root {
+    --vermelho-principal: #A52A2A;
+    --vermelho-claro: #DC5C53;
+    --cinza: #F5F5F6;
+    --cinza-escuro: #A9A9A9; 
+}
+
+body {
+    background-color: var(--cinza);
+}
+
+.bg-cinza-claro {
+    background-color: #d4d4d4;
+}
+
+.bg-cinza-escuro {
+    background-color:var(--cinza-escuro);
+}
+
+.bg-survey {
+    background-color: var(--vermelho-principal);
+}
+
+.bg-rodape {
+    background-color: var(--vermelho-claro);
+}
+
+.text-survey {
+    color: var(--vermelho-principal);
+}
+
+.border-survey {
+    border-color: var(--vermelho-principal);
+}
+.bg-survey-escuro {
+    background-color: var(--vermelho-principal);
+}
+
+.text-survey-escuro {
+    color: var(--vermelho-principal)
+}
+
+.border-survey-escuro {
+    border-color: var(--vermelho-principal)
+}
+
+.border-radius{
+    border-radius: 15px;
+}
+/* 
+Tamanhos diferentes para fontes 
+*/
+.font-75 {
+    font-size: 75%;
+}
+
+.font-115 {
+    font-size: 115%;
+}
+
+.font-125 {
+    font-size: 125%;
+}
+
+.font-150 {
+    font-size: 150%;
+}
+
+.font-175 {
+    font-size: 175%;
+}
+
+
+
+/* 
+Personalização da Barra de menu pra ficar igual do site 
+*/
+.navbar {
+    padding: 0 !important;
+}
+
+.navbar .navbar-brand{
+    padding-left: 10px;
+}
+
+.navbar a.nav-link{
+    color: white !important;
+}
+
+.navbar .nav-item{
+    padding: 3px 5px;
+}
+
+.navbar .nav-item:hover{
+    background-color: var(--vermelho-claro);
+}
+
+
+/* 
+Alerta na validação dos formulários (login com senha errada, por exemplo) 
+*/
+.alert dl, .alert ol, .alert ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.fas.fa-search{
+    cursor: pointer;
+}
