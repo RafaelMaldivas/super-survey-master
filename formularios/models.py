@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.aggregates import Count
+
 
 class Pesquisa(models.Model):
     titulo = models.CharField(max_length=255)
